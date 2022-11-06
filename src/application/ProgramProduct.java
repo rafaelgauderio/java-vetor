@@ -28,8 +28,15 @@ public class ProgramProduct {
 		System.out.println(vetorProdutos[i]);
 	}
 	
+
 	System.out.println("\nMédia dos preços: " + String.format("R$ %.2f",precoMedio(vetorProdutos)));
 	
+	String [] vetorNomes = new String [] {"Rafael de Luca", "Cládia", "Fiona", "Atena"};
+	
+	System.out.println("\nImprimindo com for Each");
+	for(String apelido : vetorNomes) {
+		System.out.println(apelido);
+	}
 
 	}
 	
