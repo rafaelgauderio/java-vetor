@@ -2,6 +2,8 @@ package application;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class ProgramList {
 
@@ -20,10 +22,12 @@ public class ProgramList {
 		
 		List <String> lista = new ArrayList <String> ();
 		lista.add("Rafael de Luca");
+		lista.add("Robigol");
 		lista.add("João da Silva");
 		lista.add("Claudia");
 		lista.add("Larissa Riquelme");
 		lista.add("Formiga Atômica");
+		lista.add("Maicon");
 		
 		//inserindo elemento na posicao 3. Usa a sobrecarga do método add
 		lista.add(3, "Maria Madalena");
@@ -52,6 +56,12 @@ public class ProgramList {
 		System.out.println("\nIndex of Larissa: " + lista.indexOf("Larissa Riquelme"));
 		System.out.println("Index of Ulisses: " + lista.indexOf("Ulisses"));
 		
+		//fazer retornas apenas o que estão no filtro
+		System.out.println("\nImprimindo apenas o que começa com M");
+		List<String> resultado = lista.stream().filter(x -> x.charAt(0) == 'M').collect(Collectors.toList());
+		for (String apelido : resultado) {
+			System.out.println(apelido);
+		}
 		
 		
 	}
