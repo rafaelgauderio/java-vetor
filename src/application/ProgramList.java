@@ -2,7 +2,6 @@ package application;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class ProgramList {
@@ -22,12 +21,14 @@ public class ProgramList {
 		
 		List <String> lista = new ArrayList <String> ();
 		lista.add("Rafael de Luca");
-		lista.add("Robigol");
+		lista.add("Diego Maradona");
 		lista.add("João da Silva");
 		lista.add("Claudia");
 		lista.add("Larissa Riquelme");
 		lista.add("Formiga Atômica");
 		lista.add("Maicon");
+		lista.add("Xexelenta");
+		lista.add("Matrix");
 		
 		//inserindo elemento na posicao 3. Usa a sobrecarga do método add
 		lista.add(3, "Maria Madalena");
@@ -62,6 +63,16 @@ public class ProgramList {
 		for (String apelido : resultado) {
 			System.out.println(apelido);
 		}
+		
+		System.out.println("\nImrimindo apenas quem começa com a letra D");		
+		String nomeComeçaComR = lista.stream().filter( x -> x.charAt(0) == 'D').findFirst().orElse(null);
+		System.out.println(nomeComeçaComR);
+		
+		System.out.println("\nImprimindo quem começa ou termina com X");
+		List <String> resultado2 = lista.stream().filter(x -> x.endsWith("x") || x.charAt(0) == 'X').collect(Collectors.toList());
+		System.out.println(resultado2);
+		
+	
 		
 		
 	}
